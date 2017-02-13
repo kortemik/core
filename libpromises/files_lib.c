@@ -631,7 +631,8 @@ void RotateFiles(char *name, int number)
         {
             UnexpectedError("Failed to chown '%s'", name);
         }
-        fchmod(fd, statbuf.st_mode);
+        // MAla, fchmod ?
+	//fchmod(fd, statbuf.st_mode);
         close(fd);
     }
 }

@@ -33,6 +33,11 @@
 #define GENERIC_AGENT_CHECKSUM_SIZE ((2*CF_SHA1_LEN) + 1)
 #define GENERIC_AGENT_CHECKSUM_METHOD HASH_METHOD_SHA1
 
+// MAla stubs
+#define getuid() 0
+#define getgid() 0
+#define CheckAndSetHAState CheckAndSetHAState__stub
+
 enum generic_agent_config_common_policy_output_format
 {
     GENERIC_AGENT_CONFIG_COMMON_POLICY_OUTPUT_FORMAT_NONE,

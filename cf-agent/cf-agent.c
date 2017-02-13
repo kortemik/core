@@ -90,7 +90,7 @@
 #endif
 
 #include <ornaments.h>
-
+#include <cf-agent-stubs.h>
 
 extern int PR_KEPT;
 extern int PR_REPAIRED;

@@ -31,6 +31,8 @@
 
 #include <logging.h>
 
+//MAla
+#define CfengineCipher CfengineCipher__stub
 
 void CryptoInitialize(void);
 void CryptoDeInitialize(void);

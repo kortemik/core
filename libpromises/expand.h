@@ -29,6 +29,10 @@
 #include <generic_agent.h>
 #include <actuator.h>
 
+// MAla
+#define ShowPromise ShowPromise__stub
+#define PromiseID PromiseID__stub
+
 PromiseResult CommonEvalPromise(EvalContext *ctx, const Promise *pp, void *param);
 
 PromiseResult ExpandPromise(EvalContext *ctx, const Promise *pp, PromiseActuator *ActOnPromise, void *param);

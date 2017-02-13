@@ -27,6 +27,9 @@
 
 #include <cfnet.h>
 
+//MAla
+#define CfEnterpriseOptions CfEnterpriseOptions__stub
+#define CfSessionKeySize CfSessionKeySize__stub
 
 int IdentifyAgent(ConnectionInfo *connection);
 int AuthenticateAgent(AgentConnection *conn, bool trust_key);

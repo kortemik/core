@@ -455,9 +455,9 @@ static FilePerms GetPermissionConstraints(const EvalContext *ctx, const Promise 
         Log(LOG_LEVEL_ERR, "Problem validating a BSD flag string");
         PromiseRef(LOG_LEVEL_ERR, pp);
     }
-
-    p.owners = Rlist2UidList((Rlist *) PromiseGetConstraintAsRval(pp, "owners", RVAL_TYPE_LIST), pp);
-    p.groups = Rlist2GidList((Rlist *) PromiseGetConstraintAsRval(pp, "groups", RVAL_TYPE_LIST), pp);
+    // MAla, unix only functions
+    //p.owners = Rlist2UidList((Rlist *) PromiseGetConstraintAsRval(pp, "owners", RVAL_TYPE_LIST), pp);
+    //p.groups = Rlist2GidList((Rlist *) PromiseGetConstraintAsRval(pp, "groups", RVAL_TYPE_LIST), pp);
 
     p.findertype = PromiseGetConstraintAsRval(pp, "findertype", RVAL_TYPE_SCALAR);
     p.rxdirs = PromiseGetConstraintAsBoolean(ctx, "rxdirs", pp);
@@ -768,7 +768,7 @@ FileChange GetChangeMgtConstraints(const EvalContext *ctx, const Promise *pp)
 
     if (value && (strcmp(value, "best") == 0))
     {
-        c.hash = GetBestFileChangeHashMethod();
+        c.hash = GetBestFileChangeHashMethod__stub();
     }
     else if (value && (strcmp(value, "md5") == 0))
     {

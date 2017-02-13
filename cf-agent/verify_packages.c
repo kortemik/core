@@ -1107,7 +1107,7 @@ static int VerifyInstalledPackages(EvalContext *ctx, PackageManager **all_mgrs, 
 
     if (a.packages.package_patch_list_command != NULL)
     {
-        ReportPatches(INSTALLED_PACKAGE_LISTS); // Enterprise only
+        ReportPatches__stub(INSTALLED_PACKAGE_LISTS); // Enterprise only
     }
 
         Log(LOG_LEVEL_VERBOSE, "Done checking packages and patches");

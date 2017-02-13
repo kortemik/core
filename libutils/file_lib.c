@@ -818,7 +818,8 @@ int safe_chown_impl(const char *path, uid_t owner, gid_t group, int flags)
 int safe_chown(const char *path, uid_t owner, gid_t group)
 {
 #ifdef __MINGW32__
-    return chown(path, owner, group);
+  // MAla, chown ?
+  //return chown(path, owner, group);
 #else // !__MINGW32__
     return safe_chown_impl(path, owner, group, 0);
 #endif // !__MINGW32__

@@ -28,6 +28,9 @@
 /* TODO libpromises depends on libenv, the opposite should not happen! */
 #include <eval_context.h>
 
+// MAla
+#define LoadSlowlyVaryingObservations LoadSlowlyVaryingObservations__stub
+
 void DetectEnvironment(EvalContext *ctx);
 
 void CreateHardClassesFromCanonification(EvalContext *ctx, const char *canonified, char *tags);

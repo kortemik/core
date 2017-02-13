@@ -40,11 +40,11 @@ ProcessState GetProcessState(pid_t pid)
     Log(LOG_LEVEL_DEBUG,
           "No platform-specific code for obtaining process state. - "
           "Falling back to no PID double-checking on kill()");
-
-    if (kill(pid, 0) < 0 && errno == ESRCH)
-    {
-        return PROCESS_STATE_DOES_NOT_EXIST;
-    }
+    //MAla, unix stuff
+    //if (kill(pid, 0) < 0 && errno == ESRCH)
+    //{
+    //    return PROCESS_STATE_DOES_NOT_EXIST;
+    //}
 
     /* It might be RUNNING, STOPPED or ZOMBIE, but we can't tell the
      * difference without platform specific code. */

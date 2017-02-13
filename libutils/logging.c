@@ -208,6 +208,8 @@ void LogToSystemLog(const char *msg, LogLevel level)
     syslog(LogLevelToSyslogPriority(level), "%s", logmsg);
 }
 
+#endif
+
 const char *GetErrorStrFromCode(int error_code)
 {
     return strerror(error_code);
@@ -217,7 +219,7 @@ const char *GetErrorStr(void)
 {
     return strerror(errno);
 }
-#endif
+//#endif
 
 void VLog(LogLevel level, const char *fmt, va_list ap)
 {

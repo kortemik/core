@@ -43,6 +43,9 @@
 #include <item_lib.h>
 #include <string_lib.h>                                       /* PathAppend */
 
+// MAla
+#define getuid() 0
+
 PromiseResult LocateFilePromiserGroup(EvalContext *ctx, char *wildpath, const Promise *pp,
                                       PromiseResult (*fnptr) (EvalContext *ctx, char *path, const Promise *ptr))
 {

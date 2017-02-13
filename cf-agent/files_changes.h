@@ -27,6 +27,9 @@
 
 #include <promises.h>
 
+// MAla
+#define PromiseID PromiseID__stub
+
 typedef enum
 {
     FILE_STATE_NEW,

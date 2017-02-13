@@ -87,13 +87,13 @@ const char *GetDefault##FUNC##Dir(void)                             \
     static char STATIC##dir[PATH_MAX]; /* GLOBAL_C */               \
     return GetDefaultDir_helper(STATIC##dir, GLOBAL, FOLDER);       \
 }                                                                   \
-
-GET_DEFAULT_DIRECTORY_DEFINE(Work, work, WORKDIR, NULL)
-GET_DEFAULT_DIRECTORY_DEFINE(Log, log, LOGDIR, "log")
-GET_DEFAULT_DIRECTORY_DEFINE(Pid, pid, PIDDIR, NULL)
-GET_DEFAULT_DIRECTORY_DEFINE(Master, master, MASTERDIR, "masterfiles")
-GET_DEFAULT_DIRECTORY_DEFINE(Input, input, INPUTDIR, "inputs")
-GET_DEFAULT_DIRECTORY_DEFINE(State, state, STATEDIR, "state")
+// MAla, does not work - needs to be checked
+//GET_DEFAULT_DIRECTORY_DEFINE(Work, work, WORKDIR, NULL)
+//GET_DEFAULT_DIRECTORY_DEFINE(Log, log, LOGDIR, "log")
+//GET_DEFAULT_DIRECTORY_DEFINE(Pid, pid, PIDDIR, NULL)
+//GET_DEFAULT_DIRECTORY_DEFINE(Master, master, MASTERDIR, "masterfiles")
+//GET_DEFAULT_DIRECTORY_DEFINE(Input, input, INPUTDIR, "inputs")
+//GET_DEFAULT_DIRECTORY_DEFINE(State, state, STATEDIR, "state")
 
 /*******************************************************************/
 

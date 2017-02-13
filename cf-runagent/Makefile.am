@@ -37,11 +37,11 @@ libcf_runagent_la_LIBADD = ../libpromises/libpromises.la
 
 libcf_runagent_la_SOURCES = cf-runagent.c
 
-if !BUILTIN_EXTENSIONS
+#if !BUILTIN_EXTENSIONS
  sbin_PROGRAMS = cf-runagent
  cf_runagent_LDADD = libcf-runagent.la
  cf_runagent_SOURCES =
-endif
+#endif
 
 CLEANFILES = *.gcno *.gcda
 

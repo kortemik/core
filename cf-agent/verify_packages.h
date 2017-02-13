@@ -29,6 +29,8 @@
 
 #include <vercmp.h>
 
+#define EvalContextLogPromiseIterationOutcome EvalContextLogPromiseIterationOutcome__stub
+
 PromiseResult VerifyPackagesPromise(EvalContext *ctx, const Promise *pp);
 void ExecuteScheduledPackages(EvalContext *ctx);
 void CleanScheduledPackages(void);

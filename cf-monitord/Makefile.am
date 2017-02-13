@@ -53,12 +53,12 @@ libcf_monitord_la_SOURCES = \
         mon_temp.c \
         cf-monitord.c
 
-if !BUILTIN_EXTENSIONS
+#if !BUILTIN_EXTENSIONS
  sbin_PROGRAMS = cf-monitord
  # Workaround for automake madness (try removing it if you want to know why).
  cf_monitord_CFLAGS = $(AM_CFLAGS)
  cf_monitord_LDADD = libcf-monitord.la
-endif
+#endif
 
 CLEANFILES = *.gcno *.gcda
 

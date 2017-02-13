@@ -995,11 +995,12 @@ static void CopyLockDatabaseAtomically(const char *from, const char *to,
     }
 
     // Make sure changes are persistent on disk, so database cannot get corrupted at system crash.
-    if (fsync(to_fd) != 0)
-    {
-        Log(LOG_LEVEL_WARNING, "Could not sync %s file to disk. (fsync: '%s')", to_pretty_name, GetErrorStr());
-        goto cleanup_4;
-    }
+    //MAla, unix stuff
+    //if (fsync(to_fd) != 0)
+    //{
+    //    Log(LOG_LEVEL_WARNING, "Could not sync %s file to disk. (fsync: '%s')", to_pretty_name, GetErrorStr());
+    //    goto cleanup_4;
+    //}
 
     close(to_fd);
     if (rename(tmp_file_name, to) != 0)

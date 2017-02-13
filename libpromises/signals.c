@@ -72,12 +72,13 @@ static void CloseSignalPipe(void)
  */
 void MakeSignalPipe(void)
 {
-    if (socketpair(AF_UNIX, SOCK_STREAM, 0, SIGNAL_PIPE) != 0)
-    {
-        Log(LOG_LEVEL_CRIT, "Could not create internal communication pipe. Cannot continue. (socketpair: '%s')",
-            GetErrorStr());
-        exit(EXIT_FAILURE);
-    }
+  //MAla, unix stuff
+  //if (socketpair(AF_UNIX, SOCK_STREAM, 0, SIGNAL_PIPE) != 0)
+  //{
+  //    Log(LOG_LEVEL_CRIT, "Could not create internal communication pipe. Cannot continue. (socketpair: '%s')",
+  //        GetErrorStr());
+  //    exit(EXIT_FAILURE);
+  //}
 
     atexit(&CloseSignalPipe);
 

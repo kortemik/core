@@ -42,7 +42,8 @@ void TimeOut()
     if (ALARM_PID != -1)
     {
         Log(LOG_LEVEL_VERBOSE, "Time out of process %jd", (intmax_t)ALARM_PID);
-        GracefulTerminate(ALARM_PID, PROCESS_START_TIME_UNKNOWN);
+        //MAla, process_unix.c stuff
+	//GracefulTerminate(ALARM_PID, PROCESS_START_TIME_UNKNOWN);
     }
     else
     {

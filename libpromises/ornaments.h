@@ -33,6 +33,8 @@
 #include <policy.h>
 #include <eval_context.h>
 
+#define PromiseID PromiseID__stub
+
 void SpecialTypeBanner(TypeSequence type, int pass);
 void PromiseBanner(EvalContext *ctx, const Promise *pp);
 void Banner(const char *s);

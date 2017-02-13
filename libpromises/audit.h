@@ -33,6 +33,9 @@
 #include <policy.h>
 #include <eval_context.h>
 
+// MAla
+#define LogTotalCompliance LogTotalCompliance__stub
+
 void BeginAudit(void);
 
 void UpdatePromiseCounters(PromiseResult status);

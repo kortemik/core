@@ -442,11 +442,12 @@ static void GetNameInfo3(EvalContext *ctx)
     struct stat sb;
     char name[CF_MAXVARSIZE], quoteName[CF_MAXVARSIZE], shortname[CF_MAXVARSIZE];
 
-    if (uname(&VSYSNAME) == -1)
-    {
-        Log(LOG_LEVEL_ERR, "Couldn't get kernel name info!. (uname: %s)", GetErrorStr());
-        memset(&VSYSNAME, 0, sizeof(VSYSNAME));
-    }
+    // MAla, uname ?
+    //if (uname(&VSYSNAME) == -1)
+    //{
+    //    Log(LOG_LEVEL_ERR, "Couldn't get kernel name info!. (uname: %s)", GetErrorStr());
+    //    memset(&VSYSNAME, 0, sizeof(VSYSNAME));
+    //}
 
 #ifdef _AIX
     snprintf(real_version, _SYS_NMLN, "%.80s.%.80s", VSYSNAME.version, VSYSNAME.release);
@@ -707,7 +708,7 @@ static void GetNameInfo3(EvalContext *ctx)
 # endif
 #endif /* !__MINGW32__ */
 
-    EnterpriseContext(ctx);
+    EnterpriseContext__stub(ctx);
 
     snprintf(workbuf, sizeof(workbuf), "%u_bit", (unsigned) sizeof(void*) * 8);
     EvalContextClassPutHard(ctx, workbuf, "source=agent");
@@ -2890,9 +2891,10 @@ void GetDefVars(EvalContext *ctx)
 
 void DetectEnvironment(EvalContext *ctx)
 {
+    // MAla, unix only 
     GetNameInfo3(ctx);
-    GetInterfacesInfo(ctx);
-    GetNetworkingInfo(ctx);
+    //GetInterfacesInfo(ctx);
+    //GetNetworkingInfo(ctx);
     Get3Environment(ctx);
     BuiltinClasses(ctx);
     OSClasses(ctx);

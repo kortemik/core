@@ -943,7 +943,7 @@ EvalContext *EvalContextNew(void)
     ctx->promise_lock_cache = StringSetNew();
     ctx->function_cache = FuncCacheMapNew();
 
-    EvalContextSetupMissionPortalLogHook(ctx);
+    EvalContextSetupMissionPortalLogHook__stub(ctx);
 
     ctx->package_promise_context = PackagePromiseConfigNew();
 
@@ -1545,7 +1545,7 @@ static bool EvalContextClassPut(EvalContext *ctx, const char *ns, const char *na
         return false;
     }
 
-    Nova_ClassHistoryAddContextName(ctx->all_classes, name);
+    Nova_ClassHistoryAddContextName__stub(ctx->all_classes, name);
 
     switch (scope)
     {
@@ -2603,7 +2603,7 @@ void ClassAuditLog(EvalContext *ctx, const Promise *pp, Attributes attr, Promise
 {
     if (IsPromiseValuableForStatus(pp))
     {
-        TrackTotalCompliance(status, pp);
+        TrackTotalCompliance__stub(status, pp);
         UpdatePromiseCounters(status);
     }
 
@@ -2887,5 +2887,5 @@ const StringSet *EvalContextAllClassesGet(const EvalContext *ctx)
 void EvalContextAllClassesLoggingEnable(EvalContext *ctx, bool enable)
 {
     assert (ctx);
-    Nova_ClassHistoryEnable(&(ctx->all_classes), enable);
+    Nova_ClassHistoryEnable__stub(&(ctx->all_classes), enable);
 }

@@ -385,7 +385,8 @@ Item *RemoteDirList(const char *dirname, bool encrypt, AgentConnection *conn)
             }
 
             Item *ip = xcalloc(1, sizeof(Item));
-            ip->name = (char *) AllocateDirentForFilename(sp);
+            // MAla, unix code; unix_dir.c
+	    //ip->name = (char *) AllocateDirentForFilename(sp);
 
             if (start == NULL)  /* First element */
             {
